@@ -41,6 +41,7 @@
               <ul>
                 <li v-for="(value, propertyName, index) in pokemonList[selectedPokemon]" :key="index">
                   <p v-if="propertyName.indexOf('type') > -1"><b>{{ propertyName }}:</b> {{ pokemonType[value] }}</p>
+                  <p v-else-if="propertyName == 'legendary'"><b>{{ propertyName }}:</b> {{ value ? 'Yes' : 'No' }}</p>
                   <p v-else><b>{{ propertyName }}:</b> {{ value }}</p>
                 </li>
               </ul>
