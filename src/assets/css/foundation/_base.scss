@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+//==========================================================================
+//_base.scss
+//==========================================================================
+
+html {
+  font-size: 10px;
+  @include xsMax {
+    @include rem(1);
+  }
+}
+body {
+  width: 100%;
+  color: $colorPlain;
+  font-family: $font-ja;
+  font-size: 1.4rem;
+  font-weight: 400;
+  &.is-locked {
+    @include smMax {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  @include smMax {
+    min-width: 320px;
+  }
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  word-break: break-word;
+  @include transition;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  @include transition;
+  img,
+  i {
+    @include transition;
+  }
+}
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+iframe {
+  vertical-align: bottom;
+}
+.hover-alpha a:hover img {
+  opacity: 0.7;
+}
+::-webkit-input-placeholder {
+  color: #ccc;
+  padding-top: 0.2em;
+}
+:-moz-placeholder {
+  color: #ccc;
+  opacity: 1;
+}
+::-moz-placeholder {
+  color: #ccc;
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  color: #ccc;
+}
+
+
+
+
+
+
