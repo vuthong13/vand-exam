@@ -20,9 +20,10 @@
           </thead>
           <tbody>
             <tr v-for="(item, i) in sortedPokemonList" :key="i">
-              <td :class="[sort == propertyName ? 'active' : '', value != null ? propertyName : '']" v-for="(value, propertyName, index) in item" :key="index"  @click="selectPokemon(i)">
+              <td :class="[sort == propertyName ? 'active' : '', value != null ? propertyName : '']" v-for="(value, propertyName, index) in item" :key="index">
                 <span v-if="propertyName.indexOf('type') > -1">{{ pokemonType[value] }}</span>
                 <span v-else-if="propertyName == 'legendary'">{{ value ? 'Yes' : 'No' }}</span>
+                <span v-else-if="propertyName == 'name'" @click="selectPokemon(i)">{{ value }}</span>
                 <span v-else>{{ value }}</span>
               </td>
             </tr>
